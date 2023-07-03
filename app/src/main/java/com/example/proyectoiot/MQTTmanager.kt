@@ -74,7 +74,7 @@ class MQTTmanager(private val mqttServerUri: String,
             mqttClient.subscribe(topic, qos) { _, message ->
                 luminosity = message.payload.toString(Charsets.UTF_8)
                 Log.d("TEST-MQTT", luminosity)
-                responseSub.value = responseSub.value + "MESSAGE: " + luminosity
+                responseSub.value += luminosity
                 // Aquí puedes manejar la respuesta recibida del MQTT, enviarla a la actividad principal, etc.
             }
         }

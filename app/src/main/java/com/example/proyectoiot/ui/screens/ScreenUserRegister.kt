@@ -24,13 +24,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.proyectoiot.R
+import com.example.proyectoiot.navigation.Routes
 import com.example.proyectoiot.ui.theme.GreenBlue
 import com.example.proyectoiot.ui.theme.Pink
 
-@Preview
 @Composable
-fun ScreenUserRegister() {
+fun ScreenUserRegister(navController: NavHostController) {
 
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -177,7 +178,7 @@ fun ScreenUserRegister() {
 
             Button(
                 onClick = {
-
+                          navController.navigate(Routes.Home.route)
                 },
 
                 colors = ButtonDefaults.buttonColors(
@@ -242,7 +243,7 @@ fun ScreenUserRegister() {
                 Text(
                     modifier = Modifier.padding(start = 8.dp)
                         .clickable {
-
+                                   navController.navigate(Routes.UserLogin.route)
                         },
                     color = Color.White,
                     fontWeight = FontWeight.Bold,

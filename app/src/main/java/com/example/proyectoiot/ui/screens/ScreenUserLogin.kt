@@ -1,6 +1,5 @@
 package com.example.proyectoiot.ui.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,26 +14,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.KeyboardType.Companion.Text
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.proyectoiot.R
+import com.example.proyectoiot.navigation.Routes
 import com.example.proyectoiot.ui.theme.GreenBlue
 import com.example.proyectoiot.ui.theme.Pink
 
-
-@Preview
 @Composable
-fun ScreenUserLogin() {
+fun ScreenUserLogin(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passView by remember { mutableStateOf(false) }
@@ -158,7 +154,7 @@ fun ScreenUserLogin() {
 
             Button(
                 onClick = {
-
+                          navController.navigate(Routes.Home.route)
                 },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = Color.Transparent,
@@ -222,7 +218,7 @@ fun ScreenUserLogin() {
                     modifier = Modifier
                         .padding(start = 8.dp)
                         .clickable {
-
+                                   navController.navigate(Routes.UserRegister.route)
                         },
                     color = Color.White,
                     fontWeight = FontWeight.Bold,

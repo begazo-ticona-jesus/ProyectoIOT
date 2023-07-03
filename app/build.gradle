@@ -69,6 +69,8 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    //nav controller
+    implementation 'androidx.navigation:navigation-compose:2.4.0-beta01'
     // paho mqtt
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
